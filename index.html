@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia das Mães</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: none; /* Ocultando as imagens inicialmente */
+        }
+        audio {
+            margin-top: 20px;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feliz Dia das Mães!</h1>
+    <img id="foto" src="https://example.com/imagem-dia-das-maes-1.jpg" alt="Dia das Mães">
+    <p>
+        O Dia das Mães é uma data especial para celebrarmos e homenagearmos aquelas que nos deram a vida e nos ensinaram a amar. 
+        É um momento de gratidão, carinho e reconhecimento por todos os sacrifícios e ensinamentos que nossas mães nos proporcionaram. 
+        Que neste dia, possamos expressar todo o nosso amor e apreço por elas, não apenas com presentes, mas com gestos sinceros e palavras de afeto.
+    </p>
+
+    <!-- Adicionando a música -->
+    <audio controls>
+        <source src="URL-DA-MUSICA" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    
+    <button onclick="mostrarProximaFoto()">Próxima Foto</button>
+
+    <script>
+        const fotos = [
+            "https://example.com/imagem-dia-das-maes-1.jpg",
+            "https://example.com/imagem-dia-das-maes-2.jpg",
+            "https://example.com/imagem-dia-das-maes-3.jpg",
+            "https://example.com/imagem-dia-das-maes-4.jpg"
+        ];
+        let indiceAtual = 0;
+
+        // Exibir a primeira foto
+        document.getElementById("foto").src = fotos[indiceAtual];
+        document.getElementById("foto").style.display = "block";
+
+        function mostrarProximaFoto() {
+            indiceAtual = (indiceAtual + 1) % fotos.length; // Ciclar entre as fotos
+            document.getElementById("foto").src = fotos[indiceAtual];
+        }
+    </script>
+</body>
+</html>
